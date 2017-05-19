@@ -39,7 +39,7 @@ public class MainActivity extends Activity {
                 @Override
                 public void onClick(View v) {
                     String texto = textoTarefa.getText().toString();
-                    bancoDados.execSQL("INSERT INTO tarefas (tarefa) VALUES(" + texto + ")");
+                    salvarTarefa(texto);
 
                 }
             });
@@ -63,5 +63,9 @@ public class MainActivity extends Activity {
 
 
 
+    }
+
+    private void salvarTarefa(String texto){
+        bancoDados.execSQL("INSERT INTO tarefas (tarefa) VALUES(" + texto + ")");
     }
 }
